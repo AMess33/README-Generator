@@ -105,9 +105,16 @@ inquirer
         message: 'Provide instructions and examples for the use of your project',
     },
       {
-        type: 'input',
+        type: 'confirm',
         name: 'collaborator',
-        message: '',
+        message: 'Do you have any collaborators on this project?',
+    },
+    {   
+        type: 'input',
+        name: 'partner',
+        message: 'What is your collaborator\'s GitHub username?',
+        when: (answers) => answers.collaborator === true,
+
     },
       {
         type: 'checkbox',

@@ -1,9 +1,10 @@
-# <ReadMe Generator>
-## I have created a node program to help assist in the creation of prfessional Readme files
-- To have a quick template and prompt system for creating furutre ReadMe files
-- To make the process of creating a readme easier
-- This will allow me to create a readme file in a few minutes rather than 30-45
-- how to use the inquirer node package
+
+# <no>
+## no
+- no
+- no
+- no
+- no
 ## Table of Contents 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -48,5 +49,5 @@ Go the extra mile and write tests for your application. Then provide examples on
 
 ## Questions
 
-[GitHub Profile](https://github.com/AMess33)
-[E-Mail:](amess3309@gmail.com)
+[GitHub Profile](https://github.com/)
+[E-Mail:]()
