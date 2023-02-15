@@ -5,7 +5,8 @@ const { profile } = require('console');
 
 // create function for README page content
 const generateFile = ({project, description, motivation, why, problem, learn, install, usage, collaborator, license, profile, email}) => 
-`# <${project}>
+`
+# <${project}>
 ## ${description}
 - ${motivation}
 - ${why}
