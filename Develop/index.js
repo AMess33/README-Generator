@@ -4,7 +4,7 @@ const fs = require('fs');
 const { profile } = require('console');
 
 // create function for README page content
-const generateFile = ({project, description, motivation, why, problem, learn, install, usage, partner, license, profile, email}) => 
+const generateFile = ({project, description, motivation, why, problem, repo, learn, install, usage, partner, license, profile, email}) => 
 `
 # <${project}>
 ## ${description}
@@ -30,7 +30,6 @@ ${usage}
 ## Credits
 
 ${partner} [GitHub Profile](https://github.com/${partner}) 
-
 
 ## License
 ${license}
