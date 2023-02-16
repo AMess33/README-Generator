@@ -1,5 +1,5 @@
 
-# <WorkDay-Scheduler>
+# WorkDay-Scheduler
 ## A daily plannar to schedule and save your tasks by each hour of the workday
 - This webpage will allow me to stay organized and up to date on my daily work tasks.
 - I built this to have a visual representation of my day and all the work I need to accomplish.

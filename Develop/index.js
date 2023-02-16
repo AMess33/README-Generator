@@ -7,7 +7,7 @@ const { transferableAbortSignal } = require('util');
 // create function for README page content
 const generateFile = ({project, description, motivation, why, problem, repo, tests, learn, install, usage, partner, license, profile, email}) => 
 `
-# <${project}>
+# ${project}
 ## ${description}
 - ${motivation}
 - ${why}
