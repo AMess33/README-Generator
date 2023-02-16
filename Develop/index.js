@@ -4,7 +4,7 @@ const fs = require('fs');
 const { profile } = require('console');
 
 // create function for README page content
-const generateFile = ({project, description, motivation, why, problem, learn, install, usage, collaborator, license, profile, email}) => 
+const generateFile = ({project, description, motivation, why, problem, learn, install, usage, partner, license, profile, email}) => 
 `
 # <${project}>
 ## ${description}
@@ -12,52 +12,37 @@ const generateFile = ({project, description, motivation, why, problem, learn, in
 - ${why}
 - ${problem}
 - ${learn}
+
 ## Table of Contents 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-## Installation
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-## Usage
-[Node README Repository](https://github.com/AMess33/NodeREADME)
-Provide instructions and examples for use. Include screenshots as needed.
 
-To add a screenshot, create an  folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+## Installation
+${install}
+
+## Usage
+[${project} Webpage](${repo})
+
+${usage}
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+${partner} [GitHub Profile](https://github.com/${partner}) 
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
 
 ## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
-
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
+${license}
 
 
 ## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+${test}
 
 ## Questions
 
 [GitHub Profile](https://github.com/${profile})
-[E-Mail:](${email})
+E-Mail: ${email}
 `
 
 
@@ -119,8 +104,15 @@ inquirer
       {
         type: 'checkbox',
         name: 'license',
-        message: 'What Licenses are used with this project?',
+        message: 'What Licenses are used with this project? Use the arrows to navigate and the SPACE bar to make selections',
         choices: ['MIT License', 'GNU GPLv3', 'Apache', 'Other', 'No Licenses Used'],
+        default: 'No License used for this project.'
+    },
+    {
+      type: 'input',
+      name: 'test',
+      message: 'Write a test for your application and provide examples of how to run them.',
+      default: 'No tests provided',
     },
       {
         type: 'input',
@@ -132,6 +124,11 @@ inquirer
         name: 'email',
         message: 'What is the best email address to contact you about questions regarding this project?',
     },
+    {
+      type: 'input',
+      name: 'repo',
+      message: 'What is the URL for the deployed webpage of this project?'
+    }
   ])
 
   .then((answers) => {
