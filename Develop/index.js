@@ -2,9 +2,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { profile } = require('console');
+const { transferableAbortSignal } = require('util');
 
 // create function for README page content
-const generateFile = ({project, description, motivation, why, problem, repo, learn, install, usage, partner, license, profile, email}) => 
+const generateFile = ({project, description, motivation, why, problem, repo, tests, learn, install, usage, partner, license, profile, email}) => 
 `
 # <${project}>
 ## ${description}
@@ -36,7 +37,7 @@ ${license}
 
 
 ## Tests
-${test}
+${tests}
 
 ## Questions
 
@@ -105,13 +106,11 @@ inquirer
         name: 'license',
         message: 'What Licenses are used with this project? Use the arrows to navigate and the SPACE bar to make selections',
         choices: ['MIT License', 'GNU GPLv3', 'Apache', 'Other', 'No Licenses Used'],
-        default: 'No License used for this project.'
     },
-    {
-      type: 'input',
-      name: 'test',
-      message: 'Write a test for your application and provide examples of how to run them.',
-      default: 'No tests provided',
+      {
+        type: 'input',
+        name: 'tests',
+        message: 'Write a test for your application and provide examples of how to run them.',
     },
       {
         type: 'input',
